@@ -1,7 +1,7 @@
 This project is a modern, component-driven frontend application, likely serving as a marketing or landing page, built and managed using the Lovable platform.
 
 ### What this project does
-It functions as a dynamic single-page application (SPA), presenting information through various sections like Hero, Features, Courses, Testimonials, and CTAs. The structure suggests a strong emphasis on content display and user interaction, suitable for showcasing a product, service, or educational offering.
+It functions as a dynamic single-page application (SPA), presenting information through various sections like Hero, Features, dynamic Courses listings, Testimonials, and CTAs. The structure suggests a strong emphasis on content display, real-time data integration, and user interaction, suitable for showcasing a product, service, or educational offering.
 
 ### Tech Stack and Architecture
 *   **Frontend Framework**: React, leveraging TypeScript for type safety.
@@ -22,6 +22,8 @@ The architecture is component-based, with logical separation of UI concerns, pag
     *   **`src/pages/`**: Top-level page components, such as `Index.tsx` for the main landing page and `NotFound.tsx` for error handling.
     *   **`src/hooks/`**: Custom React hooks for encapsulating reusable logic.
     *   **`src/lib/`**: Utility functions and helper modules (e.g., `utils.ts` for common helpers like `cn` for Tailwind class merging).
+    *   **`src/api/`**: Modules for interacting with backend APIs (e.g., `courses.ts` for course data fetching).
+    *   **`src/types/`**: TypeScript type definitions and interfaces for data models.
     *   **`src/main.tsx`**: The application's entry point, rendering the root React component (`App.tsx`).
     *   **`src/App.tsx`**: The main application component, likely handling routing and global layout.
     *   **`src/index.css`, `src/App.css`**: Global and application-specific styles.
@@ -36,5 +38,6 @@ The architecture is component-based, with logical separation of UI concerns, pag
 *   **Component-Driven Development**: Heavily relies on breaking down UI into manageable, reusable components.
 *   **shadcn/ui & Radix UI**: Emphasizes using pre-built, accessible, and customizable UI components, which are "copy-pasted" into the project rather than installed as a package, allowing for full control.
 *   **Tailwind CSS**: Utility-first approach for styling components directly in JSX/TSX, often combined with `clsx` and `tailwind-merge` for conditional and robust class management.
-*   **TypeScript**: Enforced for type safety across the codebase, reducing runtime errors.
+*   **TypeScript**: Enforced for type safety across the codebase, reducing runtime errors, especially for API data models.
+*   **Data Fetching with React Query**: Leverages `@tanstack/react-query` for efficient and robust handling of asynchronous data, including caching, background refetching, and error management, particularly for dynamic content like courses.
 *   **Lovable Platform**: The project is structured to integrate with Lovable for development, version control, and streamlined deployments.
