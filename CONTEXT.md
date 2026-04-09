@@ -13,7 +13,7 @@ This is a modern web application built with:
 *   **UI Component Library**: shadcn/ui (built on top of Radix UI primitives for accessibility)
 *   **Routing**: React Router DOM
 *   **Package Manager**: npm (with `bun.lockb` present, implying potential Bun usage or previous experimentation, but `npm` is primary per `README`).
-*   **Data Management**: `@tanstack/react-query` is included for potential server-state management or data fetching, `react-hook-form` for form handling, and local component state for UI logic.
+*   **Data Management**: `@tanstack/react-query` is actively used for server-state management and data fetching from APIs, `react-hook-form` handles form submissions and validation, and local component state manages UI-specific logic.
 *   **Architecture**: A standard SPA architecture, where React handles UI rendering and `react-router-dom` manages client-side navigation.
 
 ## Key Directories and Their Purpose
@@ -26,6 +26,7 @@ This is a modern web application built with:
     *   `src/pages/`: Top-level page components, typically mapped to specific routes (e.g., `Index` for the home page, `NotFound` for a 404 error).
     *   `src/hooks/`: Custom React hooks, encapsulating reusable logic.
     *   `src/lib/`: Utility functions and helper modules (e.g., `utils.ts` for common helpers).
+    *   `src/services/`: Contains API clients, data fetching logic, and other business logic interacting with external services.
 *   `tailwind.config.ts`, `postcss.config.js`: Configuration files for Tailwind CSS and PostCSS.
 *   `vite.config.ts`: Configuration for the Vite build tool.
 *   `tsconfig*.json`: TypeScript compiler configurations for different environments.
