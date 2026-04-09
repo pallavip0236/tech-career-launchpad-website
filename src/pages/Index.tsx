@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +20,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import TodoSection from "@/components/TodoSection"; // Import TodoSection
 import Courses from "@/components/Courses";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
@@ -35,6 +35,7 @@ const Index = () => {
       <Hero />
       <Stats />
       <Features />
+      <TodoSection /> {/* Add TodoSection here */}
       <Courses />
       <About />
       <Testimonials />
