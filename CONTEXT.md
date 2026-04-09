@@ -46,5 +46,5 @@ The project employs a robust and widely adopted modern web development stack:
 *   **Utility-First Styling**: Tailwind CSS is extensively used, promoting a utility-first approach where styles are applied directly using utility classes.
 *   **Type Safety**: The entire codebase is written in TypeScript, ensuring strong type checking and improved code maintainability.
 *   **Vite Development Workflow**: The project leverages Vite for a fast and efficient development experience, including hot module replacement.
-*   **Lovable Platform Integration**: The `README.md` indicates this project is managed via the "Lovable" platform, suggesting potential automated deployments or specific integration patterns with that ecosystem.
+*   **Lovable Platform Integration**: This project is configured for continuous deployment and management through the 'Lovable' platform. Environment-specific configurations and API keys related to Lovable services are managed via environment variables (e.g., `.env` files and platform secrets) and accessed through Vite's `import.meta.env`.
 ```
