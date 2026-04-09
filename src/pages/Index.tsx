@@ -27,12 +27,19 @@ import Testimonials from "@/components/Testimonials";
 import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { TodoInput } from "@/components/TodoInput";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Navigation />
       <Hero />
+      <div className="container mx-auto py-8">
+        <h2 className="text-3xl font-bold text-center mb-6">Todo Input Demonstration</h2>
+        <div className="max-w-md mx-auto">
+          <TodoInput />
+        </div>
+      </div>
       <Stats />
       <Features />
       <Courses />
