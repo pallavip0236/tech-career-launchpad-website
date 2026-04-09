@@ -17,11 +17,13 @@ This project is a React-based frontend application, likely a marketing website o
 *   **Routing**: `react-router-dom` for client-side navigation.
 *   **Package Management**: Primarily `npm` (as per `package-lock.json` and `README.md` instructions), though `bun.lockb` is also present.
 *   **Linting**: ESLint is configured for maintaining code quality and consistency.
+*   **E2E Testing**: Playwright for comprehensive end-to-end testing of application flows.
 *   **Miscellaneous UI**: Integrates various libraries for enhanced UI/UX, including `lucide-react` (icons), `embla-carousel-react` (carousels), `recharts` (charts), `sonner` (toasts), and `vaul` (drawer component).
 
 ### Key Directories and Their Purpose
 
 *   `public/`: Contains static assets like images, `favicon.ico`, and `robots.txt` that are served directly.
+*   `e2e/`: Houses Playwright end-to-end tests for critical user journeys and application functionality.
 *   `src/`: The root directory for all application source code.
     *   `src/components/`: Houses application-specific, reusable React components, often composing `ui` components (e.g., `Hero`, `Navigation`, `Footer`).
     *   `src/components/ui/`: Dedicated to `shadcn/ui` components, which are foundational UI elements adapted from Radix UI primitives (e.g., `button`, `dialog`, `input`).
@@ -41,4 +43,5 @@ This project is a React-based frontend application, likely a marketing website o
 *   **Separation of Concerns**: Logic is separated into custom hooks, utilities into `lib`, and UI into distinct component categories (`components` vs. `components/ui`).
 *   **TypeScript Adoption**: Comprehensive use of TypeScript across the codebase to ensure type safety, improve developer experience, and reduce runtime errors.
 *   **Vite Tooling**: Leveraging Vite for rapid development with Hot Module Replacement (HMR) and an optimized production build process.
+*   **End-to-End Testing**: Critical user flows and application features are validated using Playwright E2E tests, which are a mandatory step in the CI/CD pipeline to ensure release quality.
 ```
