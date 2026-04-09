@@ -11,6 +11,7 @@ This project is a modern, responsive web application, likely a marketing site or
 *   **Routing**: React Router DOM for client-side navigation.
 *   **Data Management**: Utilizes `@tanstack/react-query` for efficient server state management and data fetching.
 *   **Forms & Validation**: `react-hook-form` paired with `zod` for robust form handling and schema validation.
+*   **Testing**: `Vitest` for fast unit and integration tests, paired with `@testing-library/react` for robust UI component testing.
 *   **Architecture**: A standard client-side rendered (CSR) Single Page Application (SPA) structure, organizing code logically into components, pages, hooks, and utility modules.
 
 ### Key Directories and Their Purpose
@@ -22,6 +23,8 @@ This project is a modern, responsive web application, likely a marketing site or
     *   `src/hooks/`: Custom React hooks for encapsulating and reusing stateful logic across components.
     *   `src/lib/`: Utility functions and helper modules (e.g., `utils.ts` for common helpers).
     *   `src/pages/`: Defines top-level page components that correspond to different routes (e.g., `Index.tsx`, `NotFound.tsx`).
+    *   `src/services/`: Contains API client modules and functions for interacting with backend endpoints.
+    *   `src/types/`: Centralized location for shared TypeScript type definitions and interfaces, particularly for API data structures.
     *   `src/main.tsx`: The main entry point for the React application, responsible for rendering the root component.
     *   `src/App.tsx`: The root component, often where global layout, routing, and context providers are configured.
 *   `tailwind.config.ts`: Configuration file for Tailwind CSS.
@@ -36,4 +39,6 @@ This project is a modern, responsive web application, likely a marketing site or
 *   **TypeScript-First**: The entire codebase is written in TypeScript, enforcing type safety, enhancing code quality, and improving developer experience.
 *   **Utility-First Styling**: Tailwind CSS is extensively used for styling, allowing rapid UI development by applying utility classes directly in JSX, often combined with `clsx` and `tailwind-merge` for dynamic class concatenation.
 *   **Code Quality**: ESLint is configured to enforce consistent code style and identify potential issues, contributing to a cleaner codebase.
+*   **API Service Layer**: All interactions with external APIs are encapsulated within modules in `src/services/`, promoting separation of concerns and easier mocking and testing.
+*   **Testing Culture**: Emphasis on writing comprehensive unit and integration tests using `Vitest` and `@testing-library/react` to ensure code reliability and maintainability.
 *   **Lovable Platform**: This project is integrated with the Lovable platform, which can manage the project lifecycle, including generation, editing, and deployment.
