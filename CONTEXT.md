@@ -10,15 +10,16 @@ The application is built as a client-side React SPA, utilizing:
 *   **Tailwind CSS**: A utility-first CSS framework for rapid and consistent styling.
 *   **React Router**: For declarative client-side routing (`react-router-dom`).
 *   **React Hook Form & Zod**: For form validation and management.
-*   **TanStack React Query**: Potentially for data fetching and state management.
+*   **TanStack React Query**: For robust data fetching, caching, and state management.
 
 ### Key Directories and Their Purpose
 *   **`src/`**: Contains all application source code.
+    *   **`src/api/`**: Contains modules for interacting with external APIs, defining data fetching functions, often used in conjunction with TanStack React Query.
     *   **`src/components/`**: Houses higher-level, application-specific components that compose UI primitives (e.g., `Hero`, `Courses`, `Navigation`).
     *   **`src/components/ui/`**: Contains the re-usable UI primitive components, primarily derived from shadcn-ui (e.g., `button`, `card`, `dialog`).
     *   **`src/pages/`**: Defines top-level components that represent distinct routes or views of the application (e.g., `Index.tsx` for the homepage, `NotFound.tsx`).
-    *   **`src/hooks/`**: Custom React hooks to encapsulate reusable logic (e.g., `use-toast`, `use-mobile`).
-    *   **`src/lib/`**: Utility functions and helper modules (e.g., `utils.ts`).
+    *   **`src/hooks/`**: Custom React hooks to encapsulate reusable logic (e.g., `use-toast`, `use-mobile`, custom data fetching hooks).
+    *   **`src/lib/`**: Utility functions and helper modules (e.g., `utils.ts`, `queryClient.ts`).
     *   **`src/main.tsx`**: The entry point of the React application.
     *   **`src/App.tsx`**: The main application component, often responsible for layout and routing.
 *   **`public/`**: Static assets that are served directly (e.g., `favicon.ico`, `robots.txt`).
@@ -35,4 +36,5 @@ The application is built as a client-side React SPA, utilizing:
 *   **TypeScript for Robustness**: A strong emphasis on type safety and developer experience through the consistent use of TypeScript.
 *   **Vite-based Tooling**: Leveraging Vite's fast HMR and optimized build process for efficient development.
 *   **Centralized Routing**: Application routes are likely defined and managed within `src/App.tsx` or a dedicated routing file using `react-router-dom`.
+*   **TanStack React Query for Data Management**: All asynchronous data fetching, caching, and synchronization with a backend API is managed through TanStack React Query.
 ```
