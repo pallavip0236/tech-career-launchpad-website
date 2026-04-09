@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,6 +26,7 @@ import Testimonials from "@/components/Testimonials";
 import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import TodoList from "@/components/TodoList"; // Import the TodoList component
 
 const Index = () => {
   return (
@@ -39,6 +39,14 @@ const Index = () => {
       <About />
       <Testimonials />
       <CTA />
+
+      {/* New section for TodoList */}
+      <section id="todo" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <TodoList />
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
