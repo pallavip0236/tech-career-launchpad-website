@@ -50,6 +50,21 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Environment Variables
+
+To configure environment variables for your project, create a `.env.local` file in the root directory. This file is ignored by Git, ensuring your secrets are not committed to the repository.
+
+Example `.env.local` content:
+
+```
+VITE_DATABASE_URL="your_database_connection_string_here"
+VITE_JWT_SECRET="your_jwt_secret_here"
+```
+
+**Note**: Vite exposes environment variables that are prefixed with `VITE_` to your client-side code. You can access them in your application using `import.meta.env.VITE_YOUR_VARIABLE_NAME`.
+
+For more information on Vite's environment variable handling, refer to the [Vite documentation](https://vitejs.dev/guide/env-and-mode.html).
+
 ## What technologies are used for this project?
 
 This project is built with:
