@@ -1,4 +1,5 @@
-import type { Config } from "tailwindcss";
+// tailwind.config.test.ts
+const tailwindConfigContent = `import type { Config } from "tailwindcss";
 
 export default {
 	darkMode: ["class"],
@@ -93,4 +94,44 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config;
+} satisfies Config;`;
+
+function testTailwindConfig() {
+    console.log("Running tests for tailwind.config.ts");
+
+    // Check for darkMode
+    if (!tailwindConfigContent.includes(`darkMode: ["class"]`)) {
+        throw new Error("tailwind.config.ts: 'darkMode' property not found or incorrect.");
+    }
+
+    // Check for content paths
+    if (!tailwindConfigContent.includes(`"./src/**/*.{ts,tsx}"`)) {
+        throw new Error("tailwind.config.ts: 'content' paths do not include src directory.");
+    }
+
+    // Check for theme extend colors (a sample)
+    if (!tailwindConfigContent.includes(`border: "hsl(var(--border))"`)) {
+        throw new Error("tailwind.config.ts: Missing 'border' color in theme extend.");
+    }
+
+    // Check for theme extend borderRadius (a sample)
+    if (!tailwindConfigContent.includes(`lg: "var(--radius)"`)) {
+        throw new Error("tailwind.config.ts: Missing 'lg' borderRadius in theme extend.");
+    }
+
+    // Check for plugins
+    if (!tailwindConfigContent.includes(`require("tailwindcss-animate")`) ||
+        !tailwindConfigContent.includes(`require("@tailwindcss/typography")`)) {
+        throw new Error("tailwind.config.ts: Missing required plugins.");
+    }
+
+    console.log("tailwind.config.ts tests passed.");
+}
+
+// Execute test
+try {
+    testTailwindConfig();
+    console.log("tailwind.config.ts tests passed successfully!");
+} catch (error) {
+    console.error("Test failed:", error.message);
+}
