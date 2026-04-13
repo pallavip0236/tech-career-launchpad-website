@@ -12,6 +12,7 @@ This project is a modern, component-based web application, likely serving as a l
 *   **Routing**: React Router DOM handles client-side navigation for a Single-Page Application (SPA) experience.
 *   **Form Management**: React Hook Form is used for form handling, complemented by Zod for schema validation.
 *   **Data Fetching**: `@tanstack/react-query` is included, providing capabilities for efficient asynchronous data management and caching.
+*   **Authentication**: A custom authentication context (`AuthContext`) is used to manage user sessions, providing global access to authentication state and enabling protected routes.
 *   **Platform Integration**: Developed and deployable through the Lovable platform, as indicated by the `README.md`.
 *   **Architecture**: A modular, component-driven SPA, where `pages` compose various `components` that often utilize `shadcn/ui` building blocks.
 
@@ -24,8 +25,8 @@ This project is a modern, component-based web application, likely serving as a l
     *   `src/pages/`: Contains top-level page components, each corresponding to a distinct route or view (e.g., `Index.tsx`, `NotFound.tsx`).
     *   `src/components/`: Houses reusable, domain-specific UI components (e.g., `Hero`, `Navigation`, `Footer`, `CTA`).
     *   `src/components/ui/`: A dedicated collection of shadcn/ui components, acting as the foundational UI kit for the application. These are often generated or customized.
-    *   `src/hooks/`: Custom React hooks used to encapsulate and reuse stateful logic or side effects.
-    *   `src/lib/`: Contains utility functions, helpers, and configuration files that are not directly UI components.
+    *   `src/hooks/`: Custom React hooks used to encapsulate and reuse stateful logic or side effects, including authentication-related hooks.
+    *   `src/lib/`: Contains utility functions, helpers, and configuration files that are not directly UI components, including authentication-related utilities.
 *   `tailwind.config.ts`, `postcss.config.js`: Configuration files for Tailwind CSS and PostCSS, respectively.
 *   `vite.config.ts`: Configuration for the Vite build tool.
 *   `package.json`: Manages project dependencies, scripts, and metadata.
@@ -36,6 +37,7 @@ This project is a modern, component-based web application, likely serving as a l
 *   **Component-Driven Development**: The application is built by composing a hierarchy of reusable React components, promoting modularity and maintainability.
 *   **Utility-First Styling**: Extensive use of Tailwind CSS classes for styling elements directly within JSX, ensuring consistency and rapid UI development.
 *   **shadcn/ui Integration**: The project heavily utilizes shadcn/ui for consistent, accessible, and themeable UI components, which are managed within `src/components/ui`.
+*   **User Authentication**: Authentication state is managed application-wide through a custom React Context and related hooks, ensuring secure access control to specific routes and functionalities.
 *   **TypeScript**: The entire codebase is written in TypeScript, enforcing strict type checking to improve code quality, readability, and reduce runtime errors.
 *   **Configuration Centralization**: Dedicated configuration files for build tools (Vite), styling (Tailwind CSS), and UI components (`components.json`) centralize project settings.
 *   **ESLint**: Implemented for code linting to ensure consistent code style and adherence to best practices.
