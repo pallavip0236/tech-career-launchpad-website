@@ -1,3 +1,5 @@
+This document outlines the core technical context of the project, updated following the completion of sprint SCRUM-428.
+
 ### Project Overview
 This project is a modern, client-side rendered (CSR) web application, likely a marketing site, landing page, or informational portal (e.g., for an educational platform or business showcase given components like `Courses`, `Features`, `Testimonials`). It provides a responsive and interactive user experience.
 
