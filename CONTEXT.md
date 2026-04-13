@@ -1,7 +1,7 @@
 This document provides essential context for understanding the project's purpose, technical foundation, structure, and conventions.
 
 ### What this project does
-This project is a modern, responsive front-end web application, likely a marketing site, landing page, or informational portal. Based on its components (`Hero`, `Features`, `Courses`, `Testimonials`, `CTA`, `About`), it's designed to showcase a product, service, or educational offering, providing a comprehensive user experience.
+This project is a modern, responsive front-end web application, serving as a dynamic marketing site, landing page, or informational portal. It showcases a product, service, or educational offering, providing a comprehensive user experience with dynamically fetched content from backend APIs, leveraging components like `Hero`, `Features`, `Courses`, `Testimonials`, `CTA`, and `About`.
 
 ### Tech Stack and Architecture
 *   **Frontend Framework**: React (with TypeScript) for building dynamic user interfaces.
@@ -10,7 +10,7 @@ This project is a modern, responsive front-end web application, likely a marketi
 *   **Styling**: Tailwind CSS for a utility-first CSS approach, enabling rapid UI development.
 *   **UI Library**: shadcn/ui, built on Radix UI primitives, offers a collection of accessible and customizable UI components, heavily utilized across the application.
 *   **Routing**: React Router DOM for client-side navigation.
-*   **State Management/Data Fetching**: `@tanstack/react-query` is included for efficient data fetching, caching, and state synchronization with a server (though server-side interactions are not visible in the provided tree).
+*   **State Management/Data Fetching**: `@tanstack/react-query` is used for efficient data fetching, caching, and state synchronization with backend APIs, often leveraging a dedicated HTTP client like `Axios`.
 *   **Form Management**: `react-hook-form` with `zod` for robust form handling and validation.
 *   **Package Manager**: Primarily `npm`, with `bun.lockb` also present, suggesting potential use of Bun as an alternative.
 *   **Architecture**: Single Page Application (SPA) with a component-based structure, separating concerns into logical units (pages, components, hooks, utilities).
@@ -25,6 +25,7 @@ This project is a modern, responsive front-end web application, likely a marketi
     *   `src/pages/`: Contains top-level components that represent distinct views or routes of the application (e.g., `Index` for the homepage, `NotFound`).
     *   `src/hooks/`: Custom React hooks for encapsulating reusable logic and stateful behavior.
     *   `src/lib/`: Utility functions and helper modules that can be shared across the application (e.g., `utils.ts`).
+    *   `src/services/`: Houses modules responsible for interacting with backend APIs, often containing data fetching and mutation logic.
     *   `src/App.css`, `src/index.css`: Global CSS and Tailwind CSS imports.
 *   `tailwind.config.ts`, `postcss.config.js`: Configuration files for Tailwind CSS and PostCSS, respectively.
 *   `vite.config.ts`: Configuration for Vite, defining how the project is built and served.
@@ -37,5 +38,6 @@ This project is a modern, responsive front-end web application, likely a marketi
 *   **Atomic Design Principles**: Components are structured, with `src/components/ui` acting as "atoms," `src/components` as "molecules/organisms," and `src/pages` as "templates/pages."
 *   **Utility-First CSS**: Styling is primarily managed through Tailwind CSS classes, often utilizing the `clsx` and `tailwind-merge` utilities for conditional and consolidated class names.
 *   **Custom Hooks for Logic**: Logic that can be reused or abstracted is encapsulated in custom hooks within the `src/hooks` directory.
+*   **API Service Layer**: Logic for interacting with backend APIs is centralized within `src/services`, using `@tanstack/react-query` hooks to manage data lifecycle, ensuring a consistent and maintainable approach to data fetching.
 *   **TypeScript Best Practices**: Adherence to strong typing throughout the codebase for maintainability and error prevention.
 *   **Vite Development Workflow**: Utilizes Vite for a rapid development experience with hot module replacement (HMR) and optimized production builds.
