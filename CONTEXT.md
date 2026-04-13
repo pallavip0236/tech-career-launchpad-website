@@ -42,3 +42,7 @@ The architecture follows a standard component-based approach, common in modern R
 -   **shadcn/ui Integration:** shadcn/ui components are directly copied into the `src/components/ui` directory, which allows for direct modification, theming, and full control over their implementation, rather than using them as black-box dependencies.
 -   **Modularity:** The project follows a modular structure, separating different concerns into dedicated directories (components, pages, hooks, lib) to improve code organization, maintainability, and reusability.
 -   **Vite Development Workflow:** Leverages Vite for its extremely fast cold start times and efficient hot module reloading, significantly improving developer productivity.
+
+## Recent Updates
+
+-   **Sprint Completion:** The project was updated to reflect the completion of sprint work, including ticket SCRUM-430.
