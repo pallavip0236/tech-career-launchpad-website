@@ -13,24 +13,24 @@ const Hero = () => {
               🚀 Launch Your Tech Career
             </Badge>
             
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl lg:text-6xl">
               Master 
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> DevOps & DevSecOps </span>
               for Your Dream Job
             </h1>
             
-            <p className="mt-6 text-xl text-gray-600 sm:max-w-3xl">
+            <p className="mt-6 text-lg sm:text-xl text-gray-600 sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto sm:mx-0">
               Transform your career with industry-leading DevOps and DevSecOps training. 
               Designed for students, graduates, and career switchers who want to break into high-demand tech roles.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium text-lg px-8 py-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium text-lg px-8 py-4">
                 Enroll Now - Limited Seats
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-medium text-lg px-8 py-4">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-medium text-lg px-8 py-4">
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
               </Button>
@@ -61,7 +61,7 @@ const Hero = () => {
             <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
               <div className="relative block w-full bg-white rounded-lg overflow-hidden">
                 <img
-                  className="w-full h-64 sm:h-72 object-cover"
+                  className="w-full h-64 sm:h-72 md:h-80 object-cover"
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
                   alt="DevOps Training"
                 />

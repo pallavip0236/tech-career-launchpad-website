@@ -33,7 +33,7 @@ const Testimonials = () => {
       name: "Anjali Patel",
       role: "Site Reliability Engineer at Wipro",
       company: "Wipro",
-      content: "The real-world projects and industry mentorship made all the difference. I'm now working as an SRE and loving every day of my work. Best decision I ever made!",
+      content: "The real-world projects and industry mentorship made all the difference. I\'m now working as an SRE and loving every day of my work. Best decision I ever made!",
       avatar: "AP",
       rating: 5,
       previousRole: "Support Engineer",
@@ -55,7 +55,7 @@ const Testimonials = () => {
       name: "Sneha Reddy",
       role: "Platform Engineer at Accenture",
       company: "Accenture",
-      content: "The placement assistance is phenomenal. They didn't just train me; they helped me prepare for interviews, review my resume, and even connected me with their hiring partners.",
+      content: "The placement assistance is phenomenal. They didn\'t just train me; they helped me prepare for interviews, review my resume, and even connected me with their hiring partners.",
       avatar: "SR",
       rating: 5,
       previousRole: "Final Year Student",
@@ -75,14 +75,14 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-16 bg-white">
+    <section id="testimonials" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Success Stories</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
             Real People, Real Success
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-600 mx-auto">
             See how our students transformed their careers and achieved their dreams
           </p>
         </div>
@@ -90,7 +90,7 @@ const Testimonials = () => {
         <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-8">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   <div className="flex text-yellow-400">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -100,7 +100,7 @@ const Testimonials = () => {
                 </div>
                 
                 <blockquote className="text-gray-700 mb-6">
-                  "{testimonial.content}"
+                  \"{testimonial.content}\"
                 </blockquote>
                 
                 <div className="flex items-center justify-between">
@@ -118,8 +118,8 @@ const Testimonials = () => {
                   </div>
                 </div>
                 
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <div className="flex items-center justify-between text-sm">
+                <div className="mt-auto pt-4 border-t border-gray-200">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm space-y-2 sm:space-y-0">
                     <Badge variant="outline" className="text-xs">
                       From: {testimonial.previousRole}
                     </Badge>

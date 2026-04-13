@@ -6,27 +6,27 @@ import { Award, Users, Target, Heart } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div>
             <Badge className="mb-4 bg-purple-100 text-purple-700 hover:bg-purple-200">
               Our Story
             </Badge>
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
               From Struggle to Success: 
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Our Mission</span>
             </h2>
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg text-gray-600 leading-relaxed">
               Founded by professionals who understand the challenges of breaking into tech, Clahan Technologies was born from a simple belief: 
               <strong className="text-gray-900"> everyone deserves a chance to build a meaningful career in technology.</strong>
             </p>
-            <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-              Our founder's journey from a non-tech background to leading DevOps teams at Fortune 500 companies inspired the creation of practical, 
+            <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+              Our founder\'s journey from a non-tech background to leading DevOps teams at Fortune 500 companies inspired the creation of practical, 
               job-focused training programs that actually work.
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-6">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-4">
                   <Target className="h-6 w-6 text-blue-600" />
@@ -54,7 +54,7 @@ const About = () => {
             <Card className="overflow-hidden shadow-xl">
               <div className="relative">
                 <img
-                  className="w-full h-64 object-cover"
+                  className="w-full h-56 sm:h-64 md:h-72 object-cover"
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
                   alt="Team at work"
                 />

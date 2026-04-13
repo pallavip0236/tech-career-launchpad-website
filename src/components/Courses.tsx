@@ -69,28 +69,28 @@ const Courses = () => {
   ];
 
   return (
-    <section id="courses" className="py-16 bg-white">
+    <section id="courses" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Courses</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
             Choose Your Learning Path
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-600 mx-auto">
             Comprehensive courses designed to take you from beginner to industry-ready professional
           </p>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-8">
           {courses.map((course) => (
-            <Card key={course.id} className={`relative overflow-hidden hover:shadow-xl transition-shadow duration-300 ${course.popular ? 'ring-2 ring-blue-600' : ''}`}>
+            <Card key={course.id} className={`relative overflow-hidden hover:shadow-xl transition-shadow duration-300 ${course.popular ? 'ring-2 ring-blue-600' : ''} flex flex-col`}>
               {course.popular && (
                 <Badge className="absolute top-4 left-4 z-10 bg-blue-600 text-white">
                   Most Popular
                 </Badge>
               )}
               
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden">
                 <img
                   src={course.image}
                   alt={course.title}
@@ -112,7 +112,7 @@ const Courses = () => {
                     </div>
                     <span className="text-sm text-gray-600">({course.rating})</span>
                   </div>
-                  <div className="flex items-center space-x-4 text-sm text-gray-600">
+                  <div className="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 text-sm text-gray-600">
                     <div className="flex items-center">
                       <Users className="h-4 w-4 mr-1" />
                       {course.students}
@@ -124,15 +124,15 @@ const Courses = () => {
                   </div>
                 </div>
                 
-                <CardTitle className="text-xl">{course.title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl mt-2">{course.title}</CardTitle>
                 <CardDescription className="text-gray-600">
                   {course.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="flex-grow">
                 <div className="space-y-3">
-                  <h4 className="font-medium text-gray-900">What you'll learn:</h4>
+                  <h4 className="font-medium text-gray-900">What you\'ll learn:</h4>
                   <ul className="space-y-1">
                     {course.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-sm text-gray-600">
