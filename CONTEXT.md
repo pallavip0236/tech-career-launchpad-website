@@ -13,10 +13,11 @@ The application leverages a robust frontend ecosystem:
 *   **UI Components**: `shadcn-ui`, a collection of re-usable components built on accessible Radix UI primitives and styled with Tailwind CSS, forms the core UI library.
 *   **Routing**: React Router DOM handles client-side navigation.
 *   **Form Management**: React Hook Form combined with Zod for robust form validation.
-*   **Data Fetching**: `@tanstack/react-query` is included for potential client-side data caching and synchronization.
+*   **Data Fetching**: `@tanstack/react-query` is used for client-side data caching and synchronization with server state.
+*   **State Management**: Zustand provides lightweight, centralized client-side state management for global application data.
 *   **Package Manager**: Primarily uses `npm`, though `bun.lockb` is also present, indicating potential flexibility or past usage of Bun.
 
-The architecture follows a standard component-based pattern, separating application concerns into top-level pages, reusable UI sections, and atomic UI components.
+The architecture follows a standard component-based pattern, separating application concerns into top-level pages, reusable UI sections, and atomic UI components. Global client-side state is managed by Zustand, while server-side data fetching and caching are handled by `@tanstack/react-query`.
 
 ### Key Directories and Their Purpose
 
@@ -29,6 +30,7 @@ The architecture follows a standard component-based pattern, separating applicat
     *   `src/components/ui/`: Dedicated to `shadcn-ui` components. These are typically highly reusable, atomic UI primitives (e.g., `button`, `card`, `dialog`, `input`) that have been copied into the project for full customization.
     *   `src/hooks/`: Stores custom React hooks to encapsulate reusable logic (e.g., `use-toast`, `use-mobile`).
     *   `src/lib/`: Holds utility functions and helper modules (e.g., `utils.ts`).
+    *   `src/store/`: Contains Zustand stores for managing global application state.
     *   `src/index.css`, `src/App.css`: Global styles and application-wide CSS definitions.
 *   `tailwind.config.ts`, `postcss.config.js`: Configuration files for Tailwind CSS and PostCSS.
 *   `vite.config.ts`: Configuration for the Vite build tool.
@@ -39,6 +41,7 @@ The architecture follows a standard component-based pattern, separating applicat
 *   **`shadcn-ui` Integration**: UI components are sourced from `shadcn-ui` and reside within `src/components/ui/`, allowing direct modification and full control over their styling and behavior.
 *   **Utility-First Styling**: Tailwind CSS classes are predominantly used directly within JSX for styling, minimizing custom CSS.
 *   **TypeScript**: Strict type checking is enforced across the codebase for improved code quality and maintainability.
+*   **Client-Side State Management**: Zustand is adopted for managing global client-side application state, ensuring a predictable and centralized data flow.
 *   **Vite for Development**: The `npm run dev` script leverages Vite for a rapid development server with Hot Module Replacement (HMR).
 *   **ESLint**: Configured for consistent code style and to identify potential code issues.
 *   **"Lovable" Project**: The project's `README.md` indicates it is managed via the "Lovable" platform, which integrates with the Git repository for development and deployment.
