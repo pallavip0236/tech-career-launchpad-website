@@ -1,0 +1,94 @@
+```yaml
+# This project is a modern, responsive single-page application (SPA) designed as a versatile platform for products, services, or educational content. It now includes user authentication and dynamic content capabilities, featuring various sections like Hero, About, Courses, Features, Testimonials, and a Call-to-Action, all built with a strong emphasis on a consistent and accessible user interface.
+#
+# Sprint work completed this cycle: SCRUM-514
+
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Using a recent LTS Node.js version suitable for React/Vite
+
+      - name: Install dependencies
+        # Using npm ci for clean and consistent dependency installation in CI environments
+        run: npm ci
+
+      - name: Run build
+        # Most React/Vite projects use 'npm run build' to create production assets
+        run: npm run build
+
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    needs: ci # Ensure CI passes before attempting deployment
+    # Deploy only on pushes to the 'main' branch, not on pull requests
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy with SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            # a. Source nvm so node/npm/pnpm are available in the non-interactive SSH shell
+            export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+            # b. cd to the absolute deploy directory
+            cd ${{ secrets.EC2_DEPLOY_PATH }}
+
+            # c. Fetch and hard-reset to remote to ensure local changes never block the deploy
+            git fetch origin main
+            git reset --hard origin/main
+
+            # d. Sync new env vars from .env.sample into .env (append missing keys only, never overwrite)
+            if [ -f .env.sample ]; then
+              touch .env
+              while IFS= read -r line; do
+                # skip blank lines and comments
+                [[ -z "$line" || "$line" == \#* ]] && continue
+                key=$(echo "$line" | cut -d= -f1)
+                # only append if key not already present in .env
+                if ! grep -q "^${key}=" .env 2>/dev/null; then
+                  echo "$line" >> .env
+                  echo "⚠️  New env var added (set real value): ${key}"
+                fi
+              done < .env.sample
+            fi
+
+            # e. Install dependencies (inferred as npm ci for React/Vite projects)
+            npm ci
+
+            # f. Run build step (inferred as npm run build for React/Vite projects)
+            npm run build
+
+            # g. Restart the app with PM2 using zero-downtime reload
+            # Assuming 'index.js' is the Node.js entrypoint for the application that PM2 should manage.
+            # For a static SPA, this would typically be a small Node.js server (e.g., Express) serving the 'dist' folder.
+            pm2 reload app --update-env || pm2 start index.js --name app
+
+            # h. Save PM2 process list to be persistent across reboots
+            pm2 save
+```
